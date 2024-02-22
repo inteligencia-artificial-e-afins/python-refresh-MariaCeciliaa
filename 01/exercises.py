@@ -27,7 +27,6 @@ def is_palindrome(word):
 
     return word == word[::-1]
 
-
 # Testes 02
 def text_is_palindrome():
     print("Teste 2 - is_palindrome")
