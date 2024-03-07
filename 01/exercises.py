@@ -43,8 +43,17 @@ def text_is_palindrome():
 
 # Exercício 03
 def count_increasing_subsets(nums):
-    # implementar a solução aqui
-    pass
+    def backtrack(start, subset):
+        nonlocal count
+        if len(subset) > 0:
+            count += 1
+        for i in range(start, len(nums)):
+            if not subset or nums[i] > subset[-1]:
+                backtrack(i + 1, subset + [nums[i]])
+
+    count = 0
+    backtrack(0, [])
+    return count
 
 # Testes 03
 def test_count_increasing_subsets():
